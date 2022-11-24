@@ -1,11 +1,13 @@
 import './App.css';
+import Capsule from './Capsule';
+import Launch from './Launch';
 
 function App() {
   return (
     <div className="App">
-        <h1>
-          Test
-        </h1>
+        <h1>SpaceX Project</h1>
+        <Capsule />
+        <Launch />
     </div>
   );
 }
