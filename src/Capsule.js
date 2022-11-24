@@ -20,8 +20,6 @@ class Capsule extends React.Component {
         
         return (
 
-            
-       
         <div>
         <h1>Les capsules</h1>
         <div id='capsule'>
