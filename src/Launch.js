@@ -13,13 +13,22 @@ class Launch extends React.Component {
             .then(response => response.text())
             .then(result => {
                         for (let i = 0; i < result.length; i++){ 
-                            document.write(JSON.parse(result)[i]["mission_name"] + " " + JSON.parse(result)[i]["launch_year"] + "<br />")
+                            document.getElementById("launch").innerHTML += JSON.parse(result)[i]["mission_name"] + " " + JSON.parse(result)[i]["launch_year"] + "<br />"
                         }
                     }
                 )
             .catch(error => console.log('error', error));
         
-        return <h1>Les lancement</h1>
+        return (
+        <div>
+        <h1>Les lancement</h1>
+        <div id='launch'>
+
+        </div>
+
+        
+        </div>
+        )
         
     }
 }

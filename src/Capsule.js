@@ -12,7 +12,7 @@ class Capsule extends React.Component {
             .then(response => response.text())
             .then(result => {
                         for (let i = 0; i < result.length; i++){ 
-                            document.write(JSON.parse(result)[i]["capsule_id"] + " " + JSON.parse(result)[i]["details"] + "<br />")
+                            document.getElementById("capsule").innerHTML +=JSON.parse(result)[i]["capsule_id"] + " " + JSON.parse(result)[i]["details"] + "<br />"
                         }
                     }
                 )
@@ -21,8 +21,15 @@ class Capsule extends React.Component {
         return (
 
             
+       
+        <div>
         <h1>Les capsules</h1>
+        <div id='capsule'>
+
+        </div>
+
         
+        </div>
         )
         
     }
