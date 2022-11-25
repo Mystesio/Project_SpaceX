@@ -9,10 +9,12 @@ function affichageElements(tab, elementId, link){
         .then(response => response.text())
         .then(result => {
                     for (let i = 0; i < result.length; i++){ 
+                        var str = '<div class="elt">'
                         for (let j = 0; j < tab.length; j++){ 
-                            document.getElementById(elementId).innerHTML += '<div class="elt">' + tab[j] + " -> " + JSON.parse(result)[i][tab[j]] + "</div>"
+                            str += tab[j] + " -> " + JSON.parse(result)[i][tab[j]] + "<br />";
                         }
-                        //document.getElementById(elementId).innerHTML +=  "<br />"
+                        str += "</div>"
+                        document.getElementById(elementId).innerHTML += str
                     }
                 }
             )
