@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import affichageElements from './functions';
+import launch from './launch.jpg';
 
 class Launch extends React.Component {
     render() {
@@ -8,7 +9,10 @@ class Launch extends React.Component {
         affichageElements(tab, "launch", "https://api.spacexdata.com/v3/launches");
         return (
             <div>
-                <h1>Les lancement</h1>
+                <div class="imgFond">
+                    <img id="image" src={launch} alt={"launch"} />
+                    <h1 id="centered">Les lancements</h1>
+                </div>
                 <div id='launch'></div>
             </div>
         )

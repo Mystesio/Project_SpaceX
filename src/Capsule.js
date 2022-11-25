@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import affichageElements from './functions';
+import capsule from './capsule.jpg';
 
 class Capsule extends React.Component {
     render() {
@@ -8,7 +9,10 @@ class Capsule extends React.Component {
         affichageElements(tab, "capsule", "https://api.spacexdata.com/v3/capsules");
         return (
             <div>
-                <h1>Les capsules</h1>
+                <div class="imgFond">
+                    <img id="image" src={capsule} alt={"capsule"} />
+                    <h1 id="centered">Les capsules</h1>
+                </div>
                 <div id='capsule'></div>
             </div>
         )
