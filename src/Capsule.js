@@ -3,6 +3,7 @@ import './App.css';
 
 class Capsule extends React.Component {
     render() {
+        var tab = ["capsule_serial","capsule_id", "details"];
         var requestOptions = {
             method: 'GET',
             redirect: 'follow'
@@ -12,7 +13,10 @@ class Capsule extends React.Component {
             .then(response => response.text())
             .then(result => {
                         for (let i = 0; i < result.length; i++){ 
-                            document.getElementById("capsule").innerHTML +=JSON.parse(result)[i]["capsule_id"] + " " + JSON.parse(result)[i]["details"] + "<br />"
+                            for (let j = 0; j < tab.length; j++){ 
+                            document.getElementById("capsule").innerHTML += tab[j] + " -> " + JSON.parse(result)[i][tab[j]] + " "
+                            }
+                            document.getElementById("capsule").innerHTML +=  "<br />"
                         }
                     }
                 )
@@ -22,11 +26,8 @@ class Capsule extends React.Component {
 
         <div>
         <h1>Les capsules</h1>
-        <div id='capsule'>
-
-        </div>
-
-        
+            <div id='capsule'>
+            </div>
         </div>
         )
         

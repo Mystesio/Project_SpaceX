@@ -4,6 +4,16 @@ body{
   font-family: sans-serif;
 }
 
+img {
+  max-width: 210px;
+  height: auto;
+  position: absolute;
+  top:20px;
+  left:20px;
+  border-radius: 30px;
+
+}
+
 .App {
   margin: 0 20%;
 }
